@@ -1,0 +1,51 @@
+{
+  "name": "meu-chat",
+  "version": "1.0.0",
+  "description": "Meu Chat",
+  "author": "Maikon",
+  "private": true,
+  "main": "electron/main.cjs",
+  "portaDoPrograma": 7744,
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "com.maikonadvogadomgalt.meuchat.pc",
+    "productName": "Meu Chat",
+    "executableName": "meu-chat",
+    "directories": {
+      "output": "release"
+    },
+    "asar": false,
+    "files": [
+      "**/*",
+      "!android/**",
+      "!.github/**",
+      "!release/**",
+      "!exe/**",
+      "!node_modules/.cache/**",
+      "!*.zip",
+      "!.sk/**",
+      "!apk.config.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "icons/icon-512.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Meu Chat",
+      "artifactName": "meu-chat-Instalar.exe"
+    },
+    "portable": {
+      "artifactName": "meu-chat-sem-instalar.exe"
+    }
+  }
+}
